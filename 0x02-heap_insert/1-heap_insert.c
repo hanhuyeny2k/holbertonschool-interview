@@ -11,8 +11,10 @@
 
 heap_t *heap_insert(heap_t **root, int value)
 {
-	heap_t *new_node = NULL, **queue = NULL, **front = NULL, **rear = NULL;
+	heap_t *new_node = NULL, **queue = NULL;
+
 	size_t size = 0;
+
 	if (root == NULL)
 		return (NULL);
 	new_node = binary_tree_node(NULL, value);
@@ -29,28 +31,6 @@ heap_t *heap_insert(heap_t **root, int value)
 	{
 		free(new_node);
 		return (NULL);
-	}
-	front = rear = queue;
-	rear = enqueue(rear, *root);
-	while (front != rear)
-	{
-		if ((*front)->left != NULL)
-			rear = enqueue(rear, (*front)->left);
-		else
-		{
-			(*front)->left = new_node;
-			new_node->parent = *front;
-			break;
-		}
-		if ((*front)->right != NULL)
-			rear = enqueue(rear, (*front)->right);
-		else
-		{
-			(*front)->right = new_node;
-			new_node->parent = *front;
-			break;
-		}
-		front = dequeue(front);
 	}
 	free(queue);
 	swap_int (&new_node->n, &new_node->parent->n);
