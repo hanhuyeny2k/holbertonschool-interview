@@ -32,7 +32,12 @@ heap_t *heap_insert(heap_t **root, int value)
 		free(new_node);
 		return (NULL);
 	}
+	_heap_insert(root, queue, new_node);
 	free(queue);
-	swap_int (&new_node->n, &new_node->parent->n);
+	while (new_node->parent != NULL && new_node->n > new_node->parent->n)
+	{
+		swap_int (&new_node->n, &new_node->parent->n);
+		new_node = new_node->parent;
+	}
 	return (new_node);
 }
