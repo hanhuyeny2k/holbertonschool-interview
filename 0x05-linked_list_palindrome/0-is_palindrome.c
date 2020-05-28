@@ -34,8 +34,6 @@ int compareLists(listint_t *head1, listint_t *head2)
 	listint_t *temp1 = head1;
 	listint_t *temp2 = head2;
 
-	if (temp1 == NULL && temp2 == NULL)
-		return (1);
 	while (temp1 && temp2)
 	{
 		if (temp1->n == temp2->n)
