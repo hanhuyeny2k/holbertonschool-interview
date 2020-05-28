@@ -87,7 +87,7 @@ int is_palindrome(listint_t **head)
 			midnode->next = second_half;
 		}
 		else
-			prev_of_slow_ptr->next = second_half;
+			prev_of_slow_ptr = second_half;
 	}
 	return (result);
 }
