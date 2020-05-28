@@ -44,6 +44,7 @@ int compareLists(listint_t *head1, listint_t *head2)
 			temp2 = temp2->next;
 			return (1);
 		}
+		return (0);
 	}
 	return (0);
 }
@@ -87,7 +88,7 @@ int is_palindrome(listint_t **head)
 			midnode->next = second_half;
 		}
 		else
-			prev_of_slow_ptr = second_half;
+			prev_of_slow_ptr->next = second_half;
 	}
 	return (result);
 }
