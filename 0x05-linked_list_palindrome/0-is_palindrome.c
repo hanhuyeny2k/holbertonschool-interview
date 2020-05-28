@@ -34,6 +34,8 @@ int compareLists(listint_t *head1, listint_t *head2)
 	listint_t *temp1 = head1;
 	listint_t *temp2 = head2;
 
+	if (temp1 == NULL && temp2 == NULL)
+		return (1);
 	while (temp1 && temp2)
 	{
 		if (temp1->n == temp2->n)
@@ -42,11 +44,7 @@ int compareLists(listint_t *head1, listint_t *head2)
 			temp2 = temp2->next;
 			return (1);
 		}
-		else
-			return (0);
 	}
-	if (temp1 == NULL && temp2 == NULL)
-		return (1);
 	return (0);
 }
 
@@ -63,6 +61,8 @@ int is_palindrome(listint_t **head)
 	listint_t *midnode = NULL;
 	int result;
 
+	if (*head == NULL)
+		return (1);
 	if (head != NULL && (*head)->next != NULL)
 	{
 		while (fast_ptr != NULL && fast_ptr->next != NULL)
@@ -87,7 +87,7 @@ int is_palindrome(listint_t **head)
 			midnode->next = second_half;
 		}
 		else
-			prev_of_slow_ptr = second_half;
+			prev_of_slow_ptr->next = second_half;
 	}
 	return (result);
 }
