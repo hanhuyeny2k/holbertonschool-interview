@@ -22,7 +22,7 @@ if __name__ == "__main__":
     try:
         for linenum, line in enumerate(sys.stdin, 1):
             fields = line.split()
-            if len(fields) < 6:
+            if len(fields) <= 6:
                 pass
             file_size += int(fields.pop())
             status_codes[int(fields.pop())] += 1
