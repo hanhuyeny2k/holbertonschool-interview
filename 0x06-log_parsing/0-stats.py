@@ -21,7 +21,7 @@ def print_stats(file_size, status_codes):
 if __name__ == "__main__":
     try:
         for linenum, line in enumerate(sys.stdin, 1):
-            fields = line.split()
+            fields = line.split(" ")
             if len(fields) <= 6:
                 pass
             file_size += int(fields.pop())
