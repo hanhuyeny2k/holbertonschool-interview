@@ -28,6 +28,6 @@ if __name__ == "__main__":
             status_codes[int(fields.pop())] += 1
             if linenum % 10 == 0:
                 print_stats(file_size, status_codes)
+        print_stats(file_size, status_codes)
     except KeyboardInterrupt:
         print_stats(file_size, status_codes)
-        raise
