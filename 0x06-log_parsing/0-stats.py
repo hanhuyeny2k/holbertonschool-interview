@@ -15,15 +15,16 @@ def print_stats(file_size, status_codes):
             print('{}: {}'.format(key, status_codes[key]))
 
 
-try:
-    for linenum, line in enumerate(sys.stdin, 1):
-        fields = line.split()
-        if len(fields) < 6:
-            pass
-        file_size += int(fields.pop())
-        status_codes[int(fields.pop())] += 1
-        if linenum % 10 == 0:
-            print_stats(file_size, status_codes)
-except KeyboardInterrupt:
-    print_stats(file_size, status_codes)
-    raise
+if __name__ == "__main__":
+    try:
+        for linenum, line in enumerate(sys.stdin, 1):
+            fields = line.split()
+            if len(fields) < 6:
+                pass
+            file_size += int(fields.pop())
+            status_codes[int(fields.pop())] += 1
+            if linenum % 10 == 0:
+                print_stats(file_size, status_codes)
+    except KeyboardInterrupt:
+        print_stats(file_size, status_codes)
+        raise
