@@ -1,10 +1,19 @@
-#Sandpiles
-##Tasks
-0) Write a function that computes the sum of two sandpiles
+# 0x04. Sandpiles
 
-	* Prototype: void sandpiles_sum(int grid1[3][3], int grid2[3][3]);
-	* You can assume that both grid1 and grid2 are individually stable
-	* A sandpile is considered stable when none of its cells contains more than 3 grains
-	* When your function is done, grid1 must be stable
-	* grid1 must be printed before each toppling round, only if it is unstable (See example)
-	* Youre not allowed to allocate memory dynamically 
+## Resources:books:
+Read or watch:
+* [Sandpiles - Numberphile](https://intranet.hbtn.io/rltoken/UVY3WFjMmCRlLcr-B2Krug)
+
+---
+## Learning Objectives:bulb:
+What you should learn from this project:
+
+---
+
+### [0. Sandpiles sum](./0-sandpiles.c)
+* Write a function that computes the sum of two sandpiles
+
+---
+
+## Author
+* **Hanh Nguyen** - [hanhuyeny2k](github.com/hanhuyeny2k)
