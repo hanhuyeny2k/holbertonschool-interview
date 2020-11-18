@@ -1,31 +1,30 @@
 #!/usr/bin/node
-//Request API for Star Wars Characters
-//const process = require("process");
+
 const request = require('request');
 
 request(`https://swapi-api.hbtn.io/api/films/${process.argv[2]}/`, function (
-	error, response, body) {
-	if (error) {
-		console.error('error:', error);
-		return;
-	}
-	const chara = [];
-	const parsedBody= JSON.parse(body);
-	for(let i of parsedBody.chara) {
-		chara.push(new Promise((resolve, reject) => {
-			request(parsedBody['characters'][i], function (error,
-				response, body) {
-				if (error) {
-					reject(error);
-				} else {
-					resolve(parsedBody.name);
-				}
-			})
-		}))
-	};
-	Promise.all(characters).then((chars) => {
-		for (let ch of chars) {
-			console.log(ch);
-		}
-	});
+  error,
+  response,
+  body
+) {
+  if (error) {
+    console.error('error:', error);
+    return;
+  }
+  const characters = [];
+  const filmData = JSON.parse(body);
+  for (const characterUrl of filmData.characters) {
+    characters.push(
+      new Promise((resolve, reject) => {
+        request(characterUrl, function (error, resp, body) {
+          error ? reject(error) : resolve(JSON.parse(body).name);
+        });
+      })
+    );
+  }
+  Promise.all(characters).then((chars) => {
+    for (const ch of chars) {
+      console.log(ch);
+    }
+  });
 });
