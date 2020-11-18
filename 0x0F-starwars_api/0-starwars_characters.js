@@ -11,14 +11,14 @@ request(`https://swapi-api.hbtn.io/api/films/${process.argv[2]}/`, function (
 	}
 	const chara = [];
 	const parsedBody= JSON.parse(body);
-	for(let i = 0; i < parsedBody['characters'].length; i++) {
+	for(let i of parsedBody.chara) {
 		chara.push(new Promise((resolve, reject) => {
 			request(parsedBody['characters'][i], function (error,
 				response, body) {
 				if (error) {
 					reject(error);
 				} else {
-					resolve(parsedBody['name']);
+					resolve(parsedBody.name);
 				}
 			})
 		}))
