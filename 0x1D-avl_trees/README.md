@@ -1,12 +1,7 @@
 # 0x1D. AVL Trees
 
-## Resources:books:
-Read or watch:
-
----
-## Learning Objectives:bulb:
-What you should learn from this project:
-
+## Task
+1) Write a function that check if a binary tree is a valid AVL Tree
 ---
 ---
 
