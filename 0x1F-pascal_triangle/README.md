@@ -4,10 +4,9 @@
 Read or watch:
 
 ---
-## Learning Objectives:bulb:
-What you should learn from this project:
-
----
+## Tasks:bulb:
+0) Pascal's Triangle:
+* Create a function that returns a list of lists of integers representing the Pascal's triangle of n
 ---
 
 ## Author
