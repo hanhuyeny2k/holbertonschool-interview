@@ -11,7 +11,7 @@ What you should learn from this project:
 ---
 ## Tasks:page_facing_up:
 0) Simple RegEx
-* Write a function that checks whether a given pattern matches a given string.
+	* Write a function that checks whether a given pattern matches a given string.
 
 ---
 ## Author
